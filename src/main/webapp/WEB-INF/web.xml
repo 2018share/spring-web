@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Handles all requests into the application -->
+    <servlet>
+        <servlet-name>appServlet</servlet-name> <!-- 定义 DispatcherServlet -->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/servlet-context.xml</param-value> <!-- Servlet 的配置文件 -->
+        </init-param>
+        <load-on-startup>1</load-on-startup> <!-- 启动优先级,为 1 则与 Sevletp 容器一起启动 -->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern> <!-- 拦截 URL 模式(此处拦截所有 URL) -->
+    </servlet-mapping>
+</web-app>
